@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,12 +19,10 @@
         </div>
         <nav class="nav-links">
             <ul>
-                <li><a href="#" class="active">INICIO</a></li>
-                <li><a href="#">CONGRESO</a></li>
-                <li><a href="#">ELECCIONES 2026</a></li>
-                <li><a href="#">INTERNACIONAL</a></li>
-                <li><a href="#">TECNOLOGÍA</a></li>
-                <li><a href="#">OPINIÓN</a></li>
+                <li><a href="index.html" class="active">INICIO</a></li>
+                <li><a href="congreso.html">CONGRESO</a></li>
+                <li><a href="elecciones.html">ELECCIONES 2026</a></li>
+                <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
             </ul>
         </nav>
     </header>
@@ -31,26 +30,37 @@
     <main class="main-container">
         <div class="hero-section">
             <article class="featured-article">
+                <div class="main-img-container">
+                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80" alt="Reforma">
+                </div>
                 <span class="kicker">EXCLUSIVA</span>
-                <h1>El impacto de la desregulación económica en los mercados regionales</h1>
-                <p>Un análisis profundo sobre las nuevas normativas y su efecto en la logística de comercio exterior.</p>
-                <div class="byline">POR REDACCIÓN POLÍTICA</div>
+                <!-- ESTE LINK DEBE EXISTIR COMO ARCHIVO -->
+                <h1><a href="noticia-desregulacion.html" target="_blank">El pulso de la desregulación: El impacto en los mercados regionales</a></h1>
+                <p>Análisis profundo sobre el nuevo marco normativo y su efecto en la logística de comercio exterior.</p>
+                <div class="byline">POR ALVARO RAMÓN FONTANA LEGUIZAMON</div>
             </article>
 
             <aside class="sidebar-news">
-                <div class="sidebar-header">LO ÚLTIMO</div>
+                <div class="sidebar-header">PROYECTOS Y NOTAS</div>
+                
                 <div class="side-item">
-                    <h3>SIT-RH: El nuevo sistema de monitoreo hídrico con IA</h3>
+                    <span class="kicker">SIT-RH</span>
+                    <!-- ESTE LINK DEBE EXISTIR COMO ARCHIVO -->
+                    <h3><a href="proyecto-sit-rh.html" target="_blank">Inteligencia Territorial y Resiliencia Hídrica</a></h3>
                 </div>
+
                 <div class="side-item">
-                    <h3>Debate en el Senado por la modernización administrativa</h3>
-                </div>
-                <div class="side-item">
-                    <h3>Geopolítica: Tensiones en las rutas del Mar Negro</h3>
+                    <span class="kicker">LIBROS</span>
+                    <!-- ESTE LINK DEBE EXISTIR COMO ARCHIVO -->
+                    <h3><a href="libro-cruzar.html" target="_blank">Cruzar: El pulso invisible de los que caminan el mundo</a></h3>
                 </div>
             </aside>
         </div>
     </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 POLITICO CLONE</p>
+    </footer>
 
 </body>
 </html>
