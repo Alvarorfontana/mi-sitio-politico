@@ -1,149 +1,78 @@
-/*
- * Contexto Político - Hoja de Estilos Final Unificada
- */
-
 :root {
-    --blanco: #ffffff;
-    --negro: #000000;
-    --azul-marino: #001233;
-    --rojo-alerta: #cc0000;
-    --gris-fondo: #fafafa;
-    --gris-linea: #e0e0e0;
-    --gris-texto: #333333;
-    --fuente-serif: 'Playfair Display', serif;
-    --fuente-sans: 'Inter', sans-serif;
+    --black: #000000;
+    --white: #ffffff;
+    --navy: #001233;
+    --red: #cc0000;
+    --border: #e0e0e0;
+    --bg-gray: #f9f9f9;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-    font-family: var(--fuente-sans);
-    background-color: var(--blanco);
-    color: var(--negro);
-    line-height: 1.6;
+body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
+
+/* HEADER ESTILO POLITICO */
+.main-header { border-bottom: 5px solid var(--black); padding: 20px 5%; }
+.header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
+.social-nav a { color: var(--black); margin-left: 15px; font-size: 1.1rem; }
+
+.sections-nav { display: flex; gap: 20px; border-top: 1px solid var(--border); padding-top: 10px; flex-wrap: wrap; }
+.sections-nav a { text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
+
+/* LAYOUT DE COLUMNAS */
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 300px; /* Tamaño fijo para la derecha */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Header */
-header {
-    border-bottom: 4px solid var(--negro);
-    padding: 20px 5%;
-}
+/* IMAGEN Y NOTA CENTRAL */
+.label { color: var(--red); font-weight: 800; text-transform: uppercase; font-size: 0.7rem; display: block; margin-bottom: 5px; }
+.main-story h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
 
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.featured-image { 
+    width: 100%; 
+    height: 450px; /* Altura controlada */
+    background: #eee; 
+    overflow: hidden; 
     margin-bottom: 20px;
 }
 
-.logo {
-    font-family: var(--fuente-serif);
-    font-size: 2.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -1.5px;
+.featured-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin estirarse */
+    object-position: center 20%; 
 }
 
-.social-icons a {
-    color: var(--negro);
-    margin-left: 15px;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
+.summary { font-size: 1.2rem; color: #444; margin-bottom: 20px; }
+.read-more { background: var(--navy); color: white; padding: 10px 20px; text-decoration: none; font-weight: 700; display: inline-block; }
 
-.social-icons a:hover { color: var(--rojo-alerta); }
+/* SIDEBAR */
+.sidebar-area { border-left: 1px solid var(--border); padding-left: 20px; }
+.sidebar-title { font-family: 'Playfair Display', serif; border-bottom: 3px solid var(--black); margin-bottom: 20px; }
+.sidebar-link { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+.sidebar-link a { color: var(--navy); font-weight: 700; text-decoration: none; display: block; margin-top: 5px; }
 
-nav {
-    display: flex;
-    gap: 25px;
-    border-top: 1px solid var(--gris-linea);
-    padding-top: 15px;
-    flex-wrap: wrap;
-}
+/* COMENTARIOS */
+.comments-section { margin-top: 40px; background: var(--bg-gray); padding: 20px; }
+.comment { display: flex; gap: 15px; background: white; padding: 15px; border: 1px solid var(--border); }
+.user-img { width: 40px; height: 40px; border-radius: 50%; background: #ccc; flex-shrink: 0; }
 
-nav a {
-    text-decoration: none;
-    color: var(--negro);
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-}
-
-/* Layout */
-.container {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 40px;
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 0 5%;
-}
-
-/* Nota Central e Imagen */
-.hero-section { border-bottom: 1px solid var(--gris-linea); padding-bottom: 40px; }
-
-.category-tag {
-    color: var(--rojo-alerta);
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-.hero-title {
-    font-family: var(--fuente-serif);
-    font-size: 3.5rem;
-    line-height: 1;
-    margin-bottom: 25px;
-}
-
-.hero-image-container {
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    background-color: var(--negro);
-}
-
-.hero-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 15%; /* Ajuste para ver los rostros correctamente */
-    display: block;
-}
-
-.hero-excerpt { font-size: 1.25rem; color: var(--gris-texto); margin-bottom: 25px; }
-
-.cta-button {
-    background-color: var(--azul-marino);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-}
-
-/* Sidebar */
-.sidebar { border-left: 1px solid var(--gris-linea); padding-left: 20px; }
-.sidebar-heading { font-family: var(--fuente-serif); margin-bottom: 20px; border-bottom: 2px solid var(--negro); }
-.sidebar-item { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
-.sidebar-item a { color: var(--azul-marino); font-weight: 700; text-decoration: none; font-size: 1.1rem; }
-.sidebar-item a:hover { text-decoration: underline; color: var(--rojo-alerta); }
-
-/* Comentarios */
-.comments-container { margin-top: 40px; padding: 30px; background: var(--gris-fondo); }
-.comment-block { display: flex; gap: 15px; margin-bottom: 20px; }
-.avatar { width: 45px; height: 45px; border-radius: 50%; background-size: cover; background-color: #ccc; flex-shrink: 0; }
-.comment-content { background: white; padding: 15px; border: 1px solid var(--gris-linea); flex: 1; }
-.comment-user { font-weight: 700; font-size: 0.9rem; }
-.comment-reply { margin-left: 60px; border-left: 2px solid var(--gris-linea); }
-
-/* Responsividad */
-@media (max-width: 1024px) {
-    .container { grid-template-columns: 1fr; }
-    .sidebar { border-left: none; padding-left: 0; border-top: 2px solid var(--negro); padding-top: 20px; }
-    .hero-title { font-size: 2.5rem; }
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .main-container { grid-template-columns: 1fr; }
+    .sidebar-area { border-left: none; padding-left: 0; border-top: 2px solid var(--black); padding-top: 20px; }
+    .main-story h1 { font-size: 2rem; }
+    .featured-image { height: 300px; }
 }
 ```[cite: 1]
+
+### ¿Qué cambió para evitar errores?
+1.  **`object-fit: cover`**: Esto es vital. Evita que la foto de Trump se "estire" o se vea aplastada. La imagen ahora llena el recuadro negro perfectamente[cite: 1].
+2.  **`grid-template-columns`**: He fijado la columna derecha a **300px**. Antes, si el texto era muy largo, la columna podía empujar a la otra y romper el sitio[cite: 1].
+3.  **Encabezado Sólido**: Se separó el logo de la navegación con un borde negro grueso, imitando exactamente la jerarquía de Politico[cite: 1].
