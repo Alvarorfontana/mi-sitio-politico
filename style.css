@@ -4,75 +4,67 @@
     --navy: #001233;
     --red: #cc0000;
     --border: #e0e0e0;
-    --bg-gray: #f9f9f9;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); }
+body { font-family: 'Inter', sans-serif; background: var(--white); overflow-x: hidden; }
 
-/* HEADER ESTILO POLITICO */
+/* HEADER */
 .main-header { border-bottom: 5px solid var(--black); padding: 20px 5%; }
 .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
-.social-nav a { color: var(--black); margin-left: 15px; font-size: 1.1rem; }
-
-.sections-nav { display: flex; gap: 20px; border-top: 1px solid var(--border); padding-top: 10px; flex-wrap: wrap; }
+.sections-nav { display: flex; gap: 20px; border-top: 1px solid var(--border); padding-top: 10px; }
 .sections-nav a { text-decoration: none; color: var(--black); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
 
-/* LAYOUT DE COLUMNAS */
+/* LAYOUT COLUMNAS */
 .main-container {
-    display: grid;
-    grid-template-columns: 1fr 300px; /* Tamaño fijo para la derecha */
-    gap: 40px;
+    display: flex; /* Cambiado a flex para mayor estabilidad */
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    gap: 40px;
 }
 
-/* IMAGEN Y NOTA CENTRAL */
-.label { color: var(--red); font-weight: 800; text-transform: uppercase; font-size: 0.7rem; display: block; margin-bottom: 5px; }
-.main-story h1 { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1.1; margin-bottom: 20px; }
+.content-area { flex: 2; min-width: 0; } /* min-width evita que los hijos ensanchen la columna */
+.sidebar-area { flex: 1; border-left: 1px solid var(--border); padding-left: 20px; max-width: 300px; }
 
+/* CONTROL DE LA IMAGEN (ERROR CORREGIDO) */
 .featured-image { 
     width: 100%; 
-    height: 450px; /* Altura controlada */
-    background: #eee; 
+    height: 400px; /* AQUÍ SE ACHICA LA FOTO */
+    background: #000; 
     overflow: hidden; 
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .featured-image img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; /* Recorta la imagen para que llene el espacio sin estirarse */
-    object-position: center 20%; 
+    object-fit: cover; /* Recorte inteligente */
+    object-position: center 20%; /* Centra en los rostros */
 }
 
-.summary { font-size: 1.2rem; color: #444; margin-bottom: 20px; }
-.read-more { background: var(--navy); color: white; padding: 10px 20px; text-decoration: none; font-weight: 700; display: inline-block; }
+/* TEXTOS */
+.label { color: var(--red); font-weight: 800; text-transform: uppercase; font-size: 0.7rem; }
+.main-story h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.1; margin: 10px 0; }
+.summary { font-size: 1.1rem; color: #444; margin-bottom: 20px; }
+.read-more { background: var(--navy); color: white; padding: 10px 20px; text-decoration: none; font-weight: 700; }
 
 /* SIDEBAR */
-.sidebar-area { border-left: 1px solid var(--border); padding-left: 20px; }
 .sidebar-title { font-family: 'Playfair Display', serif; border-bottom: 3px solid var(--black); margin-bottom: 20px; }
-.sidebar-link { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
-.sidebar-link a { color: var(--navy); font-weight: 700; text-decoration: none; display: block; margin-top: 5px; }
-
-/* COMENTARIOS */
-.comments-section { margin-top: 40px; background: var(--bg-gray); padding: 20px; }
-.comment { display: flex; gap: 15px; background: white; padding: 15px; border: 1px solid var(--border); }
-.user-img { width: 40px; height: 40px; border-radius: 50%; background: #ccc; flex-shrink: 0; }
+.sidebar-link { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.sidebar-link a { color: var(--navy); text-decoration: none; font-weight: 700; display: block; margin-top: 5px; }
 
 /* RESPONSIVO */
-@media (max-width: 900px) {
-    .main-container { grid-template-columns: 1fr; }
-    .sidebar-area { border-left: none; padding-left: 0; border-top: 2px solid var(--black); padding-top: 20px; }
-    .main-story h1 { font-size: 2rem; }
-    .featured-image { height: 300px; }
+@media (max-width: 800px) {
+    .main-container { flex-direction: column; }
+    .sidebar-area { max-width: 100%; border-left: none; border-top: 2px solid var(--black); padding-left: 0; padding-top: 20px; }
+    .featured-image { height: 250px; }
 }
 ```[cite: 1]
 
-### ¿Qué cambió para evitar errores?
-1.  **`object-fit: cover`**: Esto es vital. Evita que la foto de Trump se "estire" o se vea aplastada. La imagen ahora llena el recuadro negro perfectamente[cite: 1].
-2.  **`grid-template-columns`**: He fijado la columna derecha a **300px**. Antes, si el texto era muy largo, la columna podía empujar a la otra y romper el sitio[cite: 1].
-3.  **Encabezado Sólido**: Se separó el logo de la navegación con un borde negro grueso, imitando exactamente la jerarquía de Politico[cite: 1].
+### ¿Cómo aplicar los cambios?
+1.  Asegúrate de que los archivos `index.html` y `styles.css` estén **en la misma carpeta**.
+2.  Si la foto sigue saliendo enorme, revisa que en el HTML diga `<link rel="stylesheet" href="styles.css">`[cite: 1].
+3.  He cambiado la altura de la imagen a **400px** en el CSS. Si la quieres aún más pequeña, simplemente cambia ese número por `300px`[cite: 1].
