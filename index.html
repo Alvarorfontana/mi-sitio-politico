@@ -1,66 +1,108 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLITICO | Noticias de Política y Poder</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contexto Político | Noticias de Alta Gama</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="masthead">
-        <div class="top-black-bar">
-            <div class="logo">POLITICO</div>
-            <div class="user-actions">
-                <a href="#">SUSCRIBIRSE</a>
-                <a href="#">LOG IN</a>
+<header>
+    <div class="top-bar">
+        <a href="#" class="logo">Contexto Político</a>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <nav>
+        <a href="#">Política</a>
+        <a href="#">Sociedad</a>
+        <a href="#">Internacionales</a>
+        <a href="#">Gremiales</a>
+        <a href="#">Salud</a>
+        <a href="#">Opinión</a>
+    </nav>
+</header>
+
+<div class="container">
+    <!-- COLUMNA PRINCIPAL -->
+    <main>
+        <article class="hero-section">
+            <span class="category-tag">Internacionales</span>
+            <h1 class="hero-title">Viaje Histórico de Donald Trump a China y su Repercusión Internacional</h1>
+            
+            <!-- IMAGEN DE TRUMP ACTUALIZADA -->
+            <div class="hero-image-container">
+                <img src="https://cdn.abcotvs.com/dip/images/19099924_AP26134227198417.jpg" alt="Donald Trump en su visita oficial a China">
             </div>
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html" class="active">INICIO</a></li>
-                <li><a href="congreso.html">CONGRESO</a></li>
-                <li><a href="elecciones.html">ELECCIONES 2026</a></li>
-                <li><a href="tecnologia.html">TECNOLOGÍA</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="main-container">
-        <div class="hero-section">
-            <article class="featured-article">
-                <div class="main-img-container">
-                    <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=80" alt="Reforma">
-                </div>
-                <span class="kicker">EXCLUSIVA</span>
-                <!-- ESTE LINK DEBE EXISTIR COMO ARCHIVO -->
-                <h1><a href="noticia-marcha.html" target="_blank">El pulso de la desregulación: El impacto en los mercados regionales</a></h1>
-                <p>La última frontera del consenso: Cuando la Di Tella marchó con la UBA, la CGT y el peronismo</p>
-                <div class="byline">POR ALVARO RAMÓN FONTANA LEGUIZAMON</div>
-            </article>
+            <p class="hero-excerpt">
+                El encuentro en Beijing marca un antes y un después en las relaciones comerciales globales. Analistas advierten sobre el cambio en el eje de poder tras las reuniones privadas en el Gran Salón del Pueblo.
+            </p>
+            
+            <div class="action-bar">
+                <a href="https://noticias-externas.com/trump-china" class="cta-button" target="_blank">LEER NOTA COMPLETA</a>
+                <a href="#comments" class="comment-link"><i class="far fa-comment"></i> 124 Comentarios</a>
+            </div>
+        </article>
 
-            <aside class="sidebar-news">
-                <div class="sidebar-header">PROYECTOS Y NOTAS</div>
-                
-                <div class="side-item">
-                    <span class="kicker">SIT-RH</span>
-                    <!-- ESTE LINK DEBE EXISTIR COMO ARCHIVO -->
-                    <h3><a href="noticia.marcha.html" target="_blank">La última frontera del consenso: Cuando la Di Tella marchó con la UBA, la CGT y el peronismo</a></h3>
+        <!-- SISTEMA DE COMENTARIOS -->
+        <section id="comments" class="comments-container">
+            <h3 class="comments-title">Debate en la comunidad</h3>
+            
+            <div class="comment-block">
+                <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?u=1'); background-size: cover;"></div>
+                <div class="comment-content">
+                    <span class="comment-user">Carlos Méndez</span>
+                    <p class="comment-text">Un análisis necesario. El impacto en los mercados locales será inmediato.</p>
                 </div>
+            </div>
 
-                <div class="side-item">
-                    <span class="kicker">LIBROS</span>
-                    <!-- ESTE LINK DEBE EXISTIR COMO ARCHIVO -->
-                    <h3><a href="libro-cruzar.html" target="_blank">Cruzar: El pulso invisible de los que caminan el mundo</a></h3>
+            <div class="comment-reply">
+                <div class="comment-block">
+                    <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?u=2'); background-size: cover;"></div>
+                    <div class="comment-content">
+                        <span class="comment-user">Elena Rivas</span>
+                        <p class="comment-text">Totalmente de acuerdo, especialmente en lo que respecta a la transferencia tecnológica.</p>
+                    </div>
                 </div>
-            </aside>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 POLITICO CLONE</p>
-    </footer>
+    <!-- COLUMNA DERECHA (SIDEBAR) -->
+    <aside class="sidebar">
+        <h2 class="sidebar-heading">Lo Último</h2>
+        
+        <div class="sidebar-item">
+            <span class="category-tag">Política</span>
+            <a href="https://ejemplo.com/reforma" target="_blank">Reforma Judicial: Los puntos clave del nuevo debate parlamentario.</a>
+        </div>
+
+        <div class="sidebar-item">
+            <span class="category-tag">Gremiales</span>
+            <a href="https://ejemplo.com/salud" target="_blank">Sindicatos anuncian medidas de fuerza tras el fracaso de la paritaria.</a>
+        </div>
+
+        <div class="sidebar-item">
+            <span class="category-tag">Salud</span>
+            <a href="https://ejemplo.com/vacunas" target="_blank">Nuevas campañas de prevención en centros urbanos.</a>
+        </div>
+
+        <div class="sidebar-item">
+            <span class="category-tag">Opinión</span>
+            <a href="https://ejemplo.com/editorial" target="_blank">Editorial: El desafío de mantener la neutralidad en tiempos de crisis.</a>
+        </div>
+    </aside>
+</div>
 
 </body>
 </html>

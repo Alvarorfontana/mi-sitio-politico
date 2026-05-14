@@ -1,182 +1,24 @@
-/* RESET Y BASES */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reemplaza o añade esto en tu archivo styles.css */
 
-body {
-    font-family: 'Georgia', serif;
-    line-height: 1.6;
-    background-color: #ffffff;
-    color: #333;
-}
-
-/* HEADER ESTILO POLITICO */
-.top-black-bar {
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-}
-
-.logo {
-    font-family: 'Arial Black', sans-serif;
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: -2px;
-}
-
-.user-actions a {
-    color: #fff;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 0.75rem;
-    margin-left: 15px;
-    border: 1px solid #fff;
-    padding: 5px 10px;
-}
-
-.nav-links {
-    background: #f4f4f4;
-    border-bottom: 4px solid #000;
-    text-align: center;
-}
-
-.nav-links ul {
-    list-style: none;
-    display: inline-flex;
-}
-
-.nav-links a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #333;
-    font-family: sans-serif;
-    font-weight: 900;
-    font-size: 0.85rem;
-}
-
-.nav-links a.active, .nav-links a:hover {
-    color: #cc0000;
-}
-
-/* CONTENEDOR PRINCIPAL */
-.main-container {
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-/* GRID PRINCIPAL (Hero + Sidebar) */
-.hero-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-}
-
-/* ARTÍCULO PRINCIPAL */
-.main-img-container img {
+.hero-image-container {
     width: 100%;
-    height: 400px;
-    object-fit: cover; /* Ajusta la foto sin deformarla */
-    margin-bottom: 15px;
+    height: 500px; /* Altura fija cinematográfica */
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 1px solid var(--gris-linea);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
 }
 
-.kicker {
-    color: #cc0000;
-    font-family: sans-serif;
-    font-weight: 900;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 5px;
-}
-
-.featured-article h1 a {
-    text-decoration: none;
-    color: #000;
-    font-size: 3rem;
-    line-height: 1.1;
-    font-weight: bold;
-}
-
-.featured-article h1 a:hover {
-    color: #cc0000;
-}
-
-.byline {
-    font-family: sans-serif;
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: #666;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-
-/* SIDEBAR */
-.sidebar-header {
-    font-family: sans-serif;
-    font-weight: 900;
-    border-bottom: 3px solid #000;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.side-item {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-    margin-bottom: 15px;
-}
-
-.side-item h3 a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.1rem;
-}
-
-.side-item h3 a:hover {
-    color: #cc0000;
-}
-
-/* SECCIÓN SECUNDARIA (GRID DE ABAJO) */
-.section-divider {
-    margin: 40px 0;
-    border: 0;
-    border-top: 2px solid #000;
-}
-
-.secondary-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.small-story img {
+.hero-image-container img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
+    height: 100%;
+    object-fit: cover; /* Ajuste perfecto sin deformación */
+    object-position: center 20%; /* Centra el foco de la foto en las caras */
+    transition: transform 0.5s ease;
+    display: block;
 }
 
-.small-story h3 a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.3rem;
-}
-
-/* FOOTER */
-.main-footer {
-    background: #222;
-    color: #bbb;
-    padding: 40px;
-    text-align: center;
-    margin-top: 60px;
-    font-family: sans-serif;
-    font-size: 0.8rem;
+.hero-image-container img:hover {
+    transform: scale(1.02); /* Efecto sutil de zoom al pasar el mouse */
 }
